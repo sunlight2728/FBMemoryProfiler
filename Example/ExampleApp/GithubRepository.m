@@ -15,8 +15,8 @@
                          url:(NSURL *)url
 {
   if (self = [super init]) {
-    _name = [name copy];
-    _shortDescription = [shortDescription copy];
+    _name = name;
+    _shortDescription = ([shortDescription class] != [NSNull class]) ? [shortDescription copy] : @"No Description";
     _url = [url copy];
   }
   
